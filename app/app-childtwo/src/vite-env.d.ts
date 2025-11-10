@@ -37,4 +37,3 @@ declare module 'com-utils' {
   export function isValidUrl(url: string): boolean;
   export function isEmpty(value: unknown): boolean;
 }
-

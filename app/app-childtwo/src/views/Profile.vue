@@ -128,4 +128,3 @@ const goBack = () => {
   color: #67c23a;
 }
 </style>
-

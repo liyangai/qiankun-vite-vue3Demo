@@ -46,4 +46,3 @@ const goBack = () => {
   margin-top: 20px;
 }
 </style>
-
