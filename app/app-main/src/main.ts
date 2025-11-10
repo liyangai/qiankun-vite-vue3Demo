@@ -1,7 +1,5 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
-import ElementPlus from 'element-plus';
-import 'element-plus/dist/index.css';
 import App from './App.vue';
 import router from './router';
 import { registerMicroApps, start } from 'qiankun';
@@ -13,13 +11,11 @@ import * as Pinia from 'pinia';
 (window as any).Vue = Vue;
 (window as any).VueRouter = VueRouter;
 (window as any).Pinia = Pinia;
-(window as any).ElementPlus = ElementPlus;
 
 const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
-app.use(ElementPlus);
 
 app.mount('#app');
 

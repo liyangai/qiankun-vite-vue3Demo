@@ -1,13 +1,7 @@
 import { createApp, App as VueApp } from 'vue';
 import { createPinia } from 'pinia';
 import { createRouter, createWebHistory } from 'vue-router';
-import ElementPlus from 'element-plus';
-import 'element-plus/dist/index.css';
-import {
-  renderWithQiankun,
-  qiankunWindow,
-  QiankunProps,
-} from 'vite-plugin-qiankun/dist/helper';
+import { renderWithQiankun, qiankunWindow, QiankunProps } from 'vite-plugin-qiankun/dist/helper';
 import App from './App.vue';
 import routes from './router';
 
@@ -26,7 +20,6 @@ function render(props: QiankunProps = {}) {
   app = createApp(App);
   app.use(createPinia());
   app.use(router);
-  app.use(ElementPlus);
 
   const containerId = container ? container.querySelector('#app') : '#app';
   app.mount(containerId as any);
@@ -56,4 +49,3 @@ renderWithQiankun({
 if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
   render();
 }
-
