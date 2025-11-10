@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import qiankun from 'vite-plugin-qiankun';
+import { viteExternalsPlugin } from 'vite-plugin-externals';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -16,6 +17,12 @@ export default defineConfig(({ mode }) => {
       vue(),
       qiankun('app-childone', {
         useDevMode: true,
+      }),
+      viteExternalsPlugin({
+        vue: 'Vue',
+        'vue-router': 'VueRouter',
+        pinia: 'Pinia',
+        'element-plus': 'ElementPlus',
       }),
     ],
     resolve: {

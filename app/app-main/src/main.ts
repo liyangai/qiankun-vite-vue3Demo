@@ -5,6 +5,15 @@ import 'element-plus/dist/index.css';
 import App from './App.vue';
 import router from './router';
 import { registerMicroApps, start } from 'qiankun';
+import * as Vue from 'vue';
+import * as VueRouter from 'vue-router';
+import * as Pinia from 'pinia';
+
+// 将共享依赖暴露到 window 对象，供子应用使用
+(window as any).Vue = Vue;
+(window as any).VueRouter = VueRouter;
+(window as any).Pinia = Pinia;
+(window as any).ElementPlus = ElementPlus;
 
 const app = createApp(App);
 
