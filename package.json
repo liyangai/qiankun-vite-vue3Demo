@@ -1,0 +1,22 @@
+{
+  "name": "qiankun-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "qiankun微前端项目",
+  "scripts": {
+    "dev:main": "pnpm --filter app-main dev",
+    "dev:childone": "pnpm --filter app-childone dev",
+    "dev:childtwo": "pnpm --filter app-childtwo dev",
+    "dev": "concurrently \"pnpm:dev:main\" \"pnpm:dev:childone\" \"pnpm:dev:childtwo\"",
+    "build": "node scripts/build.js",
+    "build:libs": "pnpm --filter com-components build && pnpm --filter com-utils build",
+    "build:apps": "pnpm -r --filter './app/*' build",
+    "lint": "pnpm -r --filter './app/*' lint",
+    "format": "pnpm -r --filter './app/*' format"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "fs-extra": "^11.2.0"
+  }
+}
